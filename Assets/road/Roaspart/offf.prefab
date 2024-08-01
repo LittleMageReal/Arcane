@@ -112,10 +112,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Boon:
-  - {fileID: 11400000, guid: 63571c8c5ef335f4e9ee6d8e9f382d80, type: 2}
-  - {fileID: 11400000, guid: d2ceb2bc69efbc84fbfbd58828f5be80, type: 2}
-  - {fileID: 11400000, guid: 9aceb4df8f8198349b33de85e7108062, type: 2}
   - {fileID: 11400000, guid: d6a6789bb25bbbf4eb316cd3bbdbf53c, type: 2}
+  - {fileID: 11400000, guid: 9aceb4df8f8198349b33de85e7108062, type: 2}
   - {fileID: 11400000, guid: d6a6789bb25bbbf4eb316cd3bbdbf53c, type: 2}
   - {fileID: 11400000, guid: d6a6789bb25bbbf4eb316cd3bbdbf53c, type: 2}
   - {fileID: 11400000, guid: d6a6789bb25bbbf4eb316cd3bbdbf53c, type: 2}
