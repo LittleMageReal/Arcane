@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Mirages : MonoBehaviour
 {
-   public List<Card> Boon; // Assuming this is assigned in the inspector or through cod
-   [SerializeField] private Card randomCard;
+   //When you collide with yhis obgect, you draw random card 
+   public List<Card> Boon; // list of card that can be obtained 
+   [SerializeField] private Card randomCard; // card randomly selected from list
 
    void Start()
    {
@@ -26,6 +27,7 @@ public class Mirages : MonoBehaviour
          }
    }
 
+    //Draw random card on collision
     void OnTriggerEnter(Collider other)
     {
         // Check if the collided object has a Deck script

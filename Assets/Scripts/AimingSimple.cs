@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class AimingSimple : MonoBehaviour
 {
+    // Script that allow unit to aim by following cursor 
+
+    // line that stop's unit rotation in vertical direction (probably can remove since only one unit need to aim down and similar effect can be achived by others methods)
     public float maxDistance = 10f; // The maximum distance at which the rotation should be set to 0
 
     void Update()

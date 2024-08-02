@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Phoenix : MonoBehaviour
 {
+    //Phonix unit script. Phoenix Heal player when sumonned and returns to hand after attack( actually destroy itself and draw card from bottom )
     public int healAmount = 100; // The amount of HP to heal
     public Deck deckScript;
 
@@ -19,14 +20,14 @@ public class Phoenix : MonoBehaviour
             health.GainHealth(healAmount);
         }
     }
-
+    
+    // destroy itself after attack and draw last played card
     private void Update()
     {
         if (Input.GetButtonDown("Fire1")) //cooldown 
         {
             Destroy(gameObject); 
             deckScript.ReturnCard(1);
- 
         }
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class heathtrigger : MonoBehaviour
 {
+    //Script for heal trigger that react when player lose health and heal player 
     public int healAmount = 400; // The amount of HP to heal
     public Health playerHealth;
 
@@ -21,15 +22,11 @@ public class heathtrigger : MonoBehaviour
     }
 
     void ReactToHealthLoss()
-    {
-      
-        {
-            // Increase the player's health
-         playerHealth.GainHealth(healAmount);
+    {   
+       // Increase the player's health
+      playerHealth.GainHealth(healAmount);
 
-         // Destroy this object after reacting
-         Destroy(gameObject);
-
-        }
+      // Destroy this object after reacting
+      Destroy(gameObject);
     }
 }

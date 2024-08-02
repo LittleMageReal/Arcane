@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DrawOnColli : MonoBehaviour
 {
+    //Script to Draw card from deck on collision
     void OnTriggerEnter(Collider other)
     {
         // Check if the collided object has a Deck script
@@ -11,7 +12,7 @@ public class DrawOnColli : MonoBehaviour
 
         if (deck != null)
         {
-            // Check if the player has any cards in their hand
+            // Check if the player has any cards in their hand and draw one card if not 
             if (deck.hand.Count < 3)
             {
               deck.DrawCard(1);

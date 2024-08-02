@@ -4,29 +4,19 @@ using UnityEngine.UI;
 
 public class DriftPointManager : MonoBehaviour
 {
-    public static DriftPointManager Instance { get; private set; }
+    // Script for spening and getting Drift points 
 
+    // Type of points 
     public int GreenPoints { get; private set; }
     public int BluePoints { get; private set; }
     public int RedPoints { get; private set; }
 
+    // Ui for points count
     public TMP_Text greenPointsText;
     public TMP_Text bluePointsText;
     public TMP_Text redPointsText;
 
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-           // Instance = this;
-        }
-        else
-        {
-            Debug.LogWarning("More than one instance of DriftPointManager found!");
-          //  Destroy(this.gameObject);
-        }
-    }
-
+    //Update Ui element to show correct points 
     public void UpdatePointsUI()
     {
         if (greenPointsText != null && bluePointsText != null && redPointsText!= null)
@@ -35,19 +25,21 @@ public class DriftPointManager : MonoBehaviour
         bluePointsText.text = BluePoints.ToString();
         redPointsText.text = RedPoints.ToString();
         }
-        else{
-            Debug.Log("fg");
+        else
+        {
+            Debug.Log("Ui not assigned");
         }
             
     }
 
+    // System to Add acording points and get score for drift 
     public void AddPoints(Card.PointType pointType)
     {
         switch (pointType)
         {
             case Card.PointType.Green:
                 GreenPoints++;
-                ScoreManager.Instance.AddPoints(10);
+                ScoreManager.Instance.AddPoints(10); //Get score points
                 break;
             case Card.PointType.Blue:
                 BluePoints++;
@@ -62,13 +54,14 @@ public class DriftPointManager : MonoBehaviour
         UpdatePointsUI();
     }
 
+    // System Spend acording points and get score for summoning units or using nitro 
     public bool SpendPoints(Card.PointType pointType, int cardCost)
     {
 
         switch (pointType)
         {
             case Card.PointType.Green:
-                if (GreenPoints >= cardCost)
+                if (GreenPoints >= cardCost) // Check if have enough points to summon unit
                 {
                     GreenPoints -= cardCost;
                     UpdatePointsUI();

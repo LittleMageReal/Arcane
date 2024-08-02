@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class EarthBuff : MonoBehaviour
 {
-    public int willBoost = 200;
+    //Earth Buff is a field Effect that add will to units on collision.
+    public int willBoost = 200; //amount of will to add
     private void Start()
     {
         StartCoroutine(DestroyAfterDelay());
     }
+
+    // Add unit Will on collision
     void OnTriggerEnter(Collider other)
     {
         var willscript = other.gameObject.GetComponent<WillScript>();
@@ -18,6 +21,7 @@ public class EarthBuff : MonoBehaviour
         }
     }
 
+    // Destroy field effect after some time 
     private IEnumerator DestroyAfterDelay()
     {
         yield return new WaitForSeconds(40f);

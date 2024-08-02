@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class UiAnimations : MonoBehaviour
 {
+    // Script to crate and move sprite elements in scene 
     public GameObject TextPrefab;
     public Transform SpawnPoint;
     public Transform SpawnPoint2;
@@ -13,9 +14,10 @@ public class UiAnimations : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(SpawnAndMoveText());
+        StartCoroutine(SpawnAndMoveText()); 
     }
 
+    //Stert spawn and move sprite elements in scene
     IEnumerator SpawnAndMoveText()
     {
         while (true)
@@ -60,6 +62,7 @@ public class UiAnimations : MonoBehaviour
         }
     }
 
+    
     IEnumerator MoveTextToLeft(GameObject textInstance, float duration)
     {
         float elapsedTime = 0f;

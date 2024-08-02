@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AddCartToHand : MonoBehaviour
 {
+    // Script that when added to summoned unit add new card to the hand 
     public Card cardToAddWhenSummoned;
 
     private Deck deck;

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ClearWater : MonoBehaviour
 {
-    
+    //Script for ClearWater field Effect. ClearWater send all card's from hand to the deck 
     void OnTriggerEnter(Collider other)
     {
         // Check if the collided object has a Deck script

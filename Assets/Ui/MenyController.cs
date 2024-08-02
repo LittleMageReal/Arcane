@@ -12,6 +12,7 @@ public class MenyController : MonoBehaviour
         {
             Second.SetActive(true);
         }
+       
     }
 
     public void CloseGame()
@@ -26,12 +27,12 @@ public class MenyController : MonoBehaviour
 
     public void OnClickConnect()
     {
-        SceneManager.LoadScene("Solo");
+        SceneManager.LoadScene("GameScene");
     }
 
     public void OnClickMain()
     {
-        SceneManager.LoadScene("Loading");
+        SceneManager.LoadScene("MainScene");
     }
 }
 

@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3e14d16cc535f74890135a85b4b9b29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SKelly: {fileID: 3189813311890327848, guid: 46d4609d6c5bd9a4aa2b72a86587d322, type: 3}
+  Token: {fileID: 3189813311890327848, guid: 46d4609d6c5bd9a4aa2b72a86587d322, type: 3}
   spawnPoints:
   - {fileID: 2243305248920006543}
   - {fileID: 1982970005405446494}
@@ -549,7 +549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3e14d16cc535f74890135a85b4b9b29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SKelly: {fileID: 8043018073781199979, guid: 8a5e0e4087562cf4abf76be6251654ab, type: 3}
+  Token: {fileID: 8043018073781199979, guid: 8a5e0e4087562cf4abf76be6251654ab, type: 3}
   spawnPoints:
   - {fileID: 5613241975913030399}
   - {fileID: 4019898115875775174}

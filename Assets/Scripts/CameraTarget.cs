@@ -2,12 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class CameraTarget : MonoBehaviour
 {
     public Camera cam;
     public float threshold = 5f;
-
     public Transform player;
 
     private void Update()

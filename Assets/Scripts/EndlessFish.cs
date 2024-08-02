@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EndlessFish : MonoBehaviour
 {
+    //Script for Fish unit. Fish unit can add two copy of Itself in deck 
     [SerializeField] private Card Fish;
     void Start()
     {

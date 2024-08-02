@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class BossBehave : MonoBehaviour
 {
-    public GameObject bulletPrefab; // Assign your bullet prefab in the inspector
+    // Script for Boss Behavior 
+
+    public GameObject bulletPrefab; 
     public float speed = 90f; // Speed at which the boss rotates
-    [SerializeField] private int Attack; // Corrected typo here
-    public Transform[] firePoints;
-    public float amount = 2;
+    [SerializeField] private int Attack; // Amount of damage 
+    public Transform[] firePoints; 
+    public float Cooldown = 2; // amount of time before next bullet shot 
+    public float bulletForce = 20f; // Speed of projectile
 
-    public float bulletForce = 20f;
-
-    public int CurentPowah;
-    public bool shouldContinueAttacking = false;
+    public bool shouldContinueAttacking = false; // bool to check if unit awake
     public WillScript power;
+    public int CurentPowah; // current amount of will
 
     private void Start()
     {
@@ -23,10 +24,11 @@ public class BossBehave : MonoBehaviour
 
     private void Update()
     { 
-        if(CurentPowah != power.Will && !shouldContinueAttacking)
+        // Check if will power more than 0 and unit can attack
+        if(CurentPowah != power.Will && !shouldContinueAttacking)// Check if unit will amount is changed 
         {
             Awoken();
-            CurentPowah = power.Will;
+            CurentPowah = power.Will; // set new current will
         }
         else
         {
@@ -34,6 +36,7 @@ public class BossBehave : MonoBehaviour
         }
     }
 
+    // Attack coroutine
     IEnumerator SpawnBullets()
     {
         // Initial delay
@@ -51,7 +54,7 @@ public class BossBehave : MonoBehaviour
             transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
 
             // Check if 2 seconds have passed since the last bullet was shot
-            if (Time.time >= startTime + amount)
+            if (Time.time >= startTime + Cooldown)
             {
                 // Reset start time for next bullet
                 startTime = Time.time;
@@ -71,27 +74,26 @@ public class BossBehave : MonoBehaviour
             yield return null;
         }
     }
-
-    public void StopAttacking()
-{
-    {
-     shouldContinueAttacking = false;
-    }
-}
-   public void Awoken(){
-        shouldContinueAttacking = true;
-        StartCoroutine(SpawnBullets());
+ 
+   public void Awoken() //make unit active
+   {
+      shouldContinueAttacking = true;
+      StartCoroutine(SpawnBullets());
    }
 
-  void IsDormant()
+  void IsDormant() //make unit inactive
   {
     CurentPowah = power.Will;
-    switch(CurentPowah)
+    switch(CurentPowah) // if current will is 0 stop attack 
     {
      case 0:
       StopAttacking();
       break;
     }
   }
+   public void StopAttacking() 
+   {
+      shouldContinueAttacking = false;
+   }
 
 }

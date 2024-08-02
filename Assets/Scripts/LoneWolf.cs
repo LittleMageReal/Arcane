@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class LoneWolf : MonoBehaviour
 {
+    //Script For wolf unit that get more stats if you dont have cards in hand 
     public Deck deck;
     public WillScript willScript;
 
-    private int previousHandCount;
+    private int previousHandCount; //Amount of cards in hand
 
+    //Check amount of cards in hand and gain will boost
     void Start()
     {
         deck = GetComponentInParent<Deck>();
@@ -22,7 +24,7 @@ public class LoneWolf : MonoBehaviour
         previousHandCount = deck.hand.Count;
     }
 
-    // Update is called once per frame
+    //Check Amount of cards in hand and gain or loose stats 
     void Update()
     {
         int currentHandCount = deck.hand.Count;

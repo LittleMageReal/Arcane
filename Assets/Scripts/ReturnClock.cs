@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ReturnClock : MonoBehaviour
 {
+    // Draw card from the bottom of a deck 
     public Deck deckScript;
     [SerializeField] private int useCount = 3;
     private float scrollCooldown = 3f;
@@ -16,10 +17,10 @@ public class ReturnClock : MonoBehaviour
 
     private void Update()
     {
-            if (Input.GetKeyDown(KeyCode.Q) && Time.time - lastUse >= scrollCooldown) //cooldown 
+         if (Input.GetKeyDown(KeyCode.Q) && Time.time - lastUse >= scrollCooldown) //cooldown 
             {
                 lastUse = Time.time;
-                deckScript.ReturnCard(1);
+                deckScript.ReturnCard(1); // Function in deck
                 useCount--;
 
                 if (useCount <= 0) // If the object has been used three times

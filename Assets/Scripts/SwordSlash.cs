@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SwordSlash : MonoBehaviour
 {
+    //Sword attack that deal damage to players and units ( also to player who used sword )
     public GameObject attackPrefab;
     public Transform spawnPoint;
     public WillScript willScript;
@@ -14,7 +15,7 @@ public class SwordSlash : MonoBehaviour
 
     void Update()
     {
-            if (Input.GetKeyDown(KeyCode.Q) && Time.time - lastUse >= Cooldown)
+        if (Input.GetKeyDown(KeyCode.Q) && Time.time - lastUse >= Cooldown)
             {
                 lastUse = Time.time;
                 Invoke("Attack", 0.1f);  // waits for 0.4 seconds before calling Attack

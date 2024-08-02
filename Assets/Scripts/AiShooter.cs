@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class AiShooter : MonoBehaviour
 {
-    public Transform player; // The transform of the player game object.
+    // Script that let's Ai opponents to aim at player and shoot 
+    public Transform player; 
     public Transform firepoint;
-    public GameObject projectile; // The projectile prefab.
+    public GameObject projectile; 
     public float range = 10f; // The maximum range at which the turret can fire.
     public float fireInterval = 0.5f; // The interval at which the turret fires, in seconds.
     public float speed = 1.0f; // The speed of rotation.
-    public float firespeed = 20;
+    public float firespeed = 20; // The speed of projectile.s
 
     private float lastFireTime; // The time at which the turret last fired.
 
@@ -29,7 +30,7 @@ public class AiShooter : MonoBehaviour
           lastFireTime = Time.time;
          }
 
-         // Rotate the turret so that it always faces the player.
+         // Rotate the opponent so that it always faces the player.
          Vector3 targetDirection = player.position - transform.position;
          float singleStep = speed * Time.deltaTime;
          Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, singleStep, 0.0f);
@@ -43,7 +44,7 @@ public class AiShooter : MonoBehaviour
 
     void FireShot()
     {
-        // Instantiate the projectile at the turret's position and in the direction of the player.
+        // Instantiate the projectile at the opponent's position and in the direction of the player.
         GameObject newProjectile = Instantiate(projectile, firepoint.position, Quaternion.identity);
         newProjectile.GetComponent<Rigidbody>().AddForce((player.position - transform.position) * firespeed, ForceMode.Impulse);
     }

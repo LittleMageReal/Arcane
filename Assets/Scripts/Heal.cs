@@ -4,36 +4,37 @@ using UnityEngine;
 
 public class Heal : MonoBehaviour
 {
+    // Heal bottle script that heal player when used 
     public int healAmount = 100;
-    private Health health;
-    [SerializeField] private int useCount = 3;
-    [SerializeField] private float Cooldown = 2.5f;
-    private float lastUse;
+    private Health health; //health script
+    [SerializeField] private int useCount = 3; //amount of uses
+    [SerializeField] private float Cooldown = 2.5f; 
+    private float lastUse; // Last time use for cooldown
 
     void Start()
     {
-        // Find the Health component in the scene
-        health = GetComponentInParent<Health>();
+       // Find the Health component in parent object 
+       health = GetComponentInParent<Health>();
     }
 
     private void Update()
     {
-        
-        
-            if (Input.GetKeyDown(KeyCode.Q) && Time.time - lastUse >= Cooldown)
-            {
-                lastUse = Time.time;
-                if (health != null)
-                {
-                    health.GainHealth(healAmount);
-                }
-                useCount--;
-            }
+        // When player press q gain health 
+      if (Input.GetKeyDown(KeyCode.Q) && Time.time - lastUse >= Cooldown)
+         {
+            lastUse = Time.time;
 
-            if (useCount <= 0) // If the object has been used three times
-            {
-                Destroy(gameObject); // Destroy the object
-            }
-        
+            if (health != null)
+              {
+                 health.GainHealth(healAmount);
+              }
+
+             useCount--;
+         }
+        // If the object has been used three times destroy it 
+        if (useCount <= 0) 
+         {
+            Destroy(gameObject); 
+         } 
     }
 }

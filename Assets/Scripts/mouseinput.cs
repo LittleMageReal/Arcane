@@ -4,20 +4,21 @@ using UnityEngine;
 
 public class mouseinput : MonoBehaviour
 {
+    // Script for player mouse input
     public Spawn spawnscript;
 
     private float rightMouseHoldStartTime =  0f; // Time when the right mouse button was first pressed
     public bool isRightMouseHeld = false; // Whether the right mouse button is currently being held down
 
 
-    // Update is called once per frame
+    
     void Update()
     {
-          float scroll = Input.GetAxis("Mouse ScrollWheel");
-          spawnscript.Scrolling(scroll);
+        float scroll = Input.GetAxis("Mouse ScrollWheel");
+        spawnscript.Scrolling(scroll);
         
 
-         // Card summoning and returning cards to deck
+         // Card summoning and Activated in hand effects
          if (Input.GetButtonDown("Fire2")) 
             {
                 isRightMouseHeld = true;
@@ -38,7 +39,7 @@ public class mouseinput : MonoBehaviour
                 }
 
                 isRightMouseHeld = false;
-            }
+           }
         
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ZoneShrink : MonoBehaviour
 {
-
+    //Zone Shrink script that deal damage when player outside of the zone and shrink down zone itself ( like battle royal, now not used in game )
     public int damageAmount = 10;
     public float damageInterval = 1f; // Time between each damage tick
     
@@ -15,7 +15,8 @@ public class ZoneShrink : MonoBehaviour
     }
 
 
-    private IEnumerator DealDamage() // New coroutine for dealing damage
+    // Coroutine for dealing damage
+    private IEnumerator DealDamage() 
     {
         while (true)
         {
@@ -23,7 +24,7 @@ public class ZoneShrink : MonoBehaviour
             GameObject[] players = GameObject.FindGameObjectsWithTag("Player"); // Find all players
             foreach (var player in players)
             {
-                if (!IsInsideZone(player.transform.position))
+                if (!IsInsideZone(player.transform.position)) //Deal damage to all players outside of zone
                 {
                     // Get the Health component and call LoseHealth
                     var healthScript = player.GetComponent<Health>();
@@ -36,6 +37,7 @@ public class ZoneShrink : MonoBehaviour
         }
     }
 
+    // Check if player inside of zone
     private bool IsInsideZone(Vector3 position)
     {
         return Vector3.Distance(position, transform.position) <= transform.localScale.x / 2;
