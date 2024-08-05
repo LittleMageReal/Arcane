@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 33193144757472882}
-  - component: {fileID: 33193144757472893}
   m_Layer: 3
   m_Name: Fire
   m_TagString: Untagged
@@ -32,23 +31,6 @@ Transform:
   m_Father: {fileID: 2488186663964460674}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &33193144757472893
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 33193144757472883}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e66274c1233cc54b946516fd6f7d8d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  s: {fileID: 4496190731086936864, guid: c393a53d6a700684a96f8577c6b11635, type: 3}
-  minDirection: {x: -1, y: -1, z: -1}
-  maxDirection: {x: 1, y: 1, z: 1}
-  minObjects: 1
-  maxObjects: 1
 --- !u!1 &134331740936261271
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,7 +186,7 @@ MonoBehaviour:
   range: 55
   fireInterval: 3
   speed: 1
-  firespeed: 20
+  firespeed: 1
 --- !u!1 &1863627766576807549
 GameObject:
   m_ObjectHideFlags: 0

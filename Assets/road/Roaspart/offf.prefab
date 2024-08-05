@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 5046548845852212583}
   - component: {fileID: 5046548845852212582}
   - component: {fileID: 5046548845852212581}
-  - component: {fileID: 5046548845852212578}
   m_Layer: 0
   m_Name: Mirage
   m_TagString: Untagged
@@ -118,18 +117,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d6a6789bb25bbbf4eb316cd3bbdbf53c, type: 2}
   - {fileID: 11400000, guid: d6a6789bb25bbbf4eb316cd3bbdbf53c, type: 2}
   randomCard: {fileID: 0}
---- !u!114 &5046548845852212578
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5046548845852212580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c98d70bfc7e4dbe42a35f5513dda33ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8043018073781199979
 GameObject:
   m_ObjectHideFlags: 0

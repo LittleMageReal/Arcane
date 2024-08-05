@@ -18,14 +18,13 @@ public class SoundManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+            musicSource.clip = background;
+            musicSource.Play();
         }
         else
         {
             Destroy(gameObject);
         }
-
-        musicSource.clip = background;
-        musicSource.Play();
     }
 
    public void PlaySFX(AudioClip clip)

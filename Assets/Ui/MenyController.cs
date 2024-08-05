@@ -2,15 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
+using UnityEngine.UI;
 
 public class MenyController : MonoBehaviour
 {
-    public GameObject Second;
+    [SerializeField] private GameObject Second;
+    [SerializeField] private TMP_Text LoadText;
     void Update()
     {
         if (Input.GetKey(KeyCode.Escape))
         {
-            Second.SetActive(true);
+            SecondMeny();
         }
        
     }
@@ -20,6 +23,11 @@ public class MenyController : MonoBehaviour
         Application.Quit();
     }
 
+    public void SecondMeny()
+    {
+       Second.SetActive(true);
+    }
+
     public void OnCloseMeny()
     {
         Second.SetActive(false);
@@ -27,12 +35,13 @@ public class MenyController : MonoBehaviour
 
     public void OnClickConnect()
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadSceneAsync("GameScene");
+        LoadText.text = "Loading";
     }
 
     public void OnClickMain()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadSceneAsync("MainScene");
     }
 }
 

@@ -40,6 +40,5 @@ public class mouseinput : MonoBehaviour
 
                 isRightMouseHeld = false;
            }
-        
     }
 }
