@@ -5,14 +5,22 @@ using UnityEngine;
 public class Mirages : MonoBehaviour
 {
    //When you collide with yhis obgect, you draw random card 
-   public List<Card> Boon; // list of card that can be obtained 
+   public DeckListData cardList; // list of card that can be obtained 
    [SerializeField] private Card randomCard; // card randomly selected from list
 
    void Start()
    {
-    // Select a random card from the Boon list
-      randomCard = Boon[Random.Range(0, Boon.Count)];
-      Renderer renderer = GetComponent<Renderer>(); // Get the Renderer component of the current object
+       if (randomCard == null)
+       {
+         // Select a random card from the Boon list
+         randomCard = cardList.cards[Random.Range(0, cardList.cards.Count)];
+       }
+      UnpdateColor();
+   }
+
+    void UnpdateColor()
+    {
+        Renderer renderer = GetComponent<Renderer>(); // Get the Renderer component of the current object
          switch (randomCard.pointType)
         {
          case Card.PointType.Green:
@@ -25,7 +33,7 @@ public class Mirages : MonoBehaviour
           renderer.material.color = Color.magenta;
           break;
          }
-   }
+    }
 
     //Draw random card on collision
     void OnTriggerEnter(Collider other)

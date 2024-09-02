@@ -8,7 +8,9 @@ using UnityEngine.UI;
 public class MenyController : MonoBehaviour
 {
     [SerializeField] private GameObject Second;
+    [SerializeField] private GameObject Deckmeny;
     [SerializeField] private TMP_Text LoadText;
+
     void Update()
     {
         if (Input.GetKey(KeyCode.Escape))
@@ -31,6 +33,16 @@ public class MenyController : MonoBehaviour
     public void OnCloseMeny()
     {
         Second.SetActive(false);
+    }
+
+    public void DeckMeny()
+    {
+       Deckmeny.SetActive(true);
+    }
+
+    public void CloseDeckMeny()
+    {
+       Deckmeny.SetActive(false);
     }
 
     public void OnClickConnect()

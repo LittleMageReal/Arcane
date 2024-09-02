@@ -146,6 +146,7 @@ public class Spawn : MonoBehaviour
                 // Instantiate the unit without a parent object
                 GameObject instantiatedObject = Instantiate(card.unitPrefab, spawnPosition, transform.rotation);
 
+                selectedCardIndex = 0;
             }
         }
 
@@ -162,6 +163,8 @@ public class Spawn : MonoBehaviour
             GameObject instantiatedObject = Instantiate(card.unitPrefab, spawnPosition, transform.rotation);
 
             instantiatedObject.transform.SetParent(parentObject);
+
+            selectedCardIndex = 0;
         }
 
         void SpawnOnSupportPosition(Card card)
@@ -173,6 +176,8 @@ public class Spawn : MonoBehaviour
             GameObject instantiatedObject = Instantiate(card.unitPrefab, spawnPosition, transform.rotation);
 
             instantiatedObject.transform.SetParent(artifact);
+
+            selectedCardIndex = 0;
         }
 
         void SpawnBuffAndDebuff(Card card)
@@ -183,6 +188,8 @@ public class Spawn : MonoBehaviour
             GameObject instantiatedObject = Instantiate(card.unitPrefab, spawnPosition, transform.rotation);
 
             instantiatedObject.transform.SetParent(effect);
+
+            selectedCardIndex = 0;
         }
 
     }

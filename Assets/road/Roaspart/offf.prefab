@@ -110,12 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc5055363fc2ae44ab05848af14054f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Boon:
-  - {fileID: 11400000, guid: d6a6789bb25bbbf4eb316cd3bbdbf53c, type: 2}
-  - {fileID: 11400000, guid: 9aceb4df8f8198349b33de85e7108062, type: 2}
-  - {fileID: 11400000, guid: d6a6789bb25bbbf4eb316cd3bbdbf53c, type: 2}
-  - {fileID: 11400000, guid: d6a6789bb25bbbf4eb316cd3bbdbf53c, type: 2}
-  - {fileID: 11400000, guid: d6a6789bb25bbbf4eb316cd3bbdbf53c, type: 2}
+  cardList: {fileID: 11400000, guid: fcf35cad0923d084baddad171c0c4ce2, type: 2}
   randomCard: {fileID: 0}
 --- !u!1 &8043018073781199979
 GameObject:
